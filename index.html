@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Go — The Ultimate Web Game</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <!-- 🌟 Smooth Cursor Trail (Canvas) -->
+  <canvas id="cursor-trail"></canvas>
+
+  <!-- 🌈 Splash Screen -->
+  <section id="splash-screen">
+    <h1 class="title">Tic Tac <span>Go!</span></h1>
+    <p class="tagline">Where classic fun meets gamified challenge!</p>
+    <button id="start-btn">Play Now 🚀</button>
+  </section>
+
+  <!-- 🎨 Setup Screen -->
+  <section id="setup-screen" class="hidden">
+    <button class="back-btn">⬅ Back</button>
+    <h2>Choose Your Theme ✨</h2>
+    <div class="theme-options">
+      <div class="theme neon" data-theme="neon">Neon</div>
+      <div class="theme galaxy" data-theme="galaxy">Galaxy</div>
+      <div class="theme sunset" data-theme="sunset">Sunset</div>
+    </div>
+
+    <h2>Pick Your Symbol ⚔️</h2>
+    <div class="symbol-options">
+      <button class="symbol-btn" data-symbol="X">❌</button>
+      <button class="symbol-btn" data-symbol="O">⭕</button>
+    </div>
+
+    <button id="proceed-btn" class="hidden">Next ➡️</button>
+  </section>
+
+  <!-- 🧩 Mode Screen -->
+  <section id="mode-screen" class="hidden">
+    <button class="back-btn">⬅ Back</button>
+    <h2>Select Grid Size</h2>
+    <div class="grid-options">
+      <button class="grid-btn" data-size="3">3×3</button>
+      <button class="grid-btn" data-size="4">4×4</button>
+      <button class="grid-btn" data-size="5">5×5</button>
+    </div>
+
+    <h2>Choose Game Type</h2>
+    <div class="type-options">
+      <button class="type-btn" data-type="friend">Player vs Player</button>
+      <button class="type-btn" data-type="ai">Player vs AI</button>
+    </div>
+
+    <div id="name-inputs" class="hidden">
+      <input type="text" id="player1-name" placeholder="Player 1 Name" />
+      <input type="text" id="player2-name" placeholder="Player 2 Name" />
+    </div>
+
+    <div id="ai-difficulty" class="hidden">
+      <h2>AI Difficulty</h2>
+      <div class="difficulty-options">
+        <button class="difficulty-btn" data-diff="easy">Easy</button>
+        <button class="difficulty-btn" data-diff="medium">Medium</button>
+        <button class="difficulty-btn" data-diff="hard">Hard</button>
+      </div>
+    </div>
+
+    <h2>Challenge Mode</h2>
+    <div class="challenge-options">
+      <button class="challenge-btn" data-mode="none">None</button>
+      <button class="challenge-btn" data-mode="timed">⏱ Timed</button>
+      <button class="challenge-btn" data-mode="reverse">🔁 Reverse</button>
+      <button class="challenge-btn" data-mode="invisible">🫥 Invisible</button>
+    </div>
+
+    <button id="play-btn" class="hidden">Start Game 🎮</button>
+  </section>
+
+  <!-- 🎮 Game Screen -->
+  <section id="game-screen" class="hidden">
+    <button class="back-btn">⬅ Back</button>
+    <h2 id="turn-info">Your Turn: X</h2>
+    <div id="game-grid"></div>
+    <div class="game-actions">
+      <button id="undo-btn">Undo ↩️</button>
+      <button id="restart-btn">Restart 🔄</button>
+    </div>
+  </section>
+
+  <!-- 🏆 Result Overlay -->
+  <div id="result-overlay" class="hidden">
+    <div id="result-message">You Win!</div>
+    <canvas id="confetti-canvas"></canvas>
+    <button id="restart-btn-overlay">Play Again 🔁</button>
+  </div>
+
+  <!-- 📊 XP + Score Panel -->
+  <section id="score-screen" class="hidden">
+    <h2>Stats & XP</h2>
+    <div class="score-details">
+      <p>Wins: <span id="stat-wins">0</span></p>
+      <p>Losses: <span id="stat-losses">0</span></p>
+      <p>Draws: <span id="stat-draws">0</span></p>
+    </div>
+    <div class="level-bar">
+      <div id="level-fill"></div>
+    </div>
+    <p class="level-message">Level up and unlock awesome new themes!</p>
+  </section>
+
+  <!-- ✨ Footer & Quote -->
+  <footer>
+    <div class="quote-banner">“Every move teaches you something — play bold!”</div>
+    <div class="socials">
+      <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
